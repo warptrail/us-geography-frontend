@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import StateInfoPanel from '../components/StateInfoPanel';
 import LoadingModule from '../components/StateInfoPanel/LoadingModule';
-
-import { a } from '../Service/cr';
+import config from '../config';
+const { API_ENDPOINT, TOKEN_KEY } = config;
 
 const StatePage = (props) => {
   const param = props.match.params.stateName;
 
   useEffect(() => {
-    const URL = `http://localhost:8080/state/${param}`;
+    const URL = `${API_ENDPOINT}state/${param}`;
     const fetchState = async () => {
       try {
         setLoading(true);
         const response = await fetch(URL, {
           headers: {
-            Authorization: a,
+            Authorization: TOKEN_KEY,
           },
         });
         if (!response.ok) {

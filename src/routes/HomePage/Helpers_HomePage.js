@@ -1,7 +1,6 @@
-import { a } from '../../Service/cr';
-
-// global url constants
-const BASE_URL = 'http://localhost:8080/';
+// config variables
+import config from '../../config';
+const { API_ENDPOINT, TOKEN_KEY } = config;
 
 const addURLToStates = (stateName) => {
   return stateName.name.toLowerCase().replace(/\s+/g, '');
@@ -13,10 +12,10 @@ export async function getStatesByName(
   setError
 ) {
   setLoadingMenu(true);
-  const STATE_URL = BASE_URL + 'state-names';
+  const STATE_URL = API_ENDPOINT + 'state-names';
   const stateNames = await fetch(STATE_URL, {
     headers: {
-      Authorization: a,
+      Authorization: TOKEN_KEY,
     },
   })
     .then((res) => {
@@ -50,9 +49,9 @@ export async function getStatesByDate(setLoadingMenu, setStatesByDate) {
   setLoadingMenu(true);
 
   setTimeout(async () => {
-    const response = await fetch(BASE_URL + 'state-names?sort=founded', {
+    const response = await fetch(API_ENDPOINT + 'state-names?sort=founded', {
       headers: {
-        Authorization: a,
+        Authorization: TOKEN_KEY,
       },
     });
     const data = await response.json();

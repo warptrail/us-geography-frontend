@@ -1,3 +1,4 @@
+// convoluted code to generate a number
 const infinityStones = 'vr890s93ks02';
 let n = infinityStones.charCodeAt(3) - 50;
 n = 26 - n;
@@ -34,4 +35,6 @@ const cr = function (s, k) {
   return result;
 };
 
-export const a = 'Bearer ' + cr('130k456h-169h-11lj-9621-0242hj130002', n);
+const eTok = '0ut97505-u22v-406y-932y-3u4w44w05907';
+
+export const a = 'Bearer ' + cr(eTok, -n);
