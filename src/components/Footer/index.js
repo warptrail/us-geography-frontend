@@ -15,6 +15,7 @@ import {
 } from './FooterElements';
 import { HomeLink, Text } from '../HomeLink';
 import Contact from '../Contact';
+import Socials from '../Socials';
 
 const myPortfolio = 'https://ryanwhitmore.dev/';
 
@@ -69,6 +70,7 @@ const Footer = () => {
           <Icon src={svgIcon} />
         </AnchorLink>
       </Credits>
+      <Socials />
     </FooterBox>
   );
 };
